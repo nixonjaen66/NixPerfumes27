@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
-import { generateCatalogWhatsAppLink } from '@/utils/whatsapp';
+import { Menu, X } from 'lucide-react';
 import { brandInfo } from '@/data/content';
 
 const Header = () => {
@@ -28,7 +27,12 @@ const Header = () => {
       <nav className="container-custom section-padding py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/images/logo.png" 
+              alt="Nix27 Perfumes" 
+              className="h-12 w-auto"
+            />
             <h1 className="text-2xl md:text-3xl font-serif font-bold text-navy-800">
               Nix Perfumes <span className="text-gold-500">27</span>
             </h1>
@@ -47,18 +51,8 @@ const Header = () => {
             ))}
           </div>
 
-          {/* WhatsApp Button + Mobile Menu */}
-          <div className="flex items-center space-x-4">
-            <a
-              href={generateCatalogWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
-            >
-              <MessageCircle className="h-4 w-4" />
-              <span className="hidden sm:inline">WhatsApp</span>
-            </a>
-
+          {/* Mobile Menu Button */}
+          <div className="flex items-center">
             {/* Mobile menu button */}
             <button
               type="button"

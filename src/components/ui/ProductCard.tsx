@@ -29,17 +29,13 @@ const ProductCard = ({ product, className = '' }: ProductCardProps) => {
           {product.category === 'tester' ? 'Tester' : 'Completo'}
         </div>
 
-        {/* Product Image Placeholder */}
-        <div className="w-full h-full bg-gradient-to-b from-navy-100 to-navy-200 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-          <div className="text-center">
-            <div className="w-20 h-28 bg-gradient-to-b from-navy-600 to-navy-800 rounded-lg mx-auto mb-3 shadow-lg relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-400/20 to-transparent"></div>
-              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-4 bg-gold-400 rounded-sm text-xs text-white flex items-center justify-center font-bold">
-                {product.brand.slice(0, 3)}
-              </div>
-            </div>
-            <p className="text-xs text-gray-600 font-medium">{product.size}</p>
-          </div>
+        {/* Product Image */}
+        <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+          <img 
+            src={product.image} 
+            alt={product.name}
+            className="w-full h-full object-contain p-4"
+          />
         </div>
       </div>
 
@@ -90,10 +86,10 @@ const ProductCard = ({ product, className = '' }: ProductCardProps) => {
           href={generateWhatsAppLink(product)}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-medium py-3 rounded-lg transition-colors duration-200 group"
+          className="w-full flex items-center justify-center space-x-2 bg-navy-600 hover:bg-navy-700 disabled:bg-gray-400 text-white font-medium py-3 rounded-lg transition-colors duration-200 group"
         >
           <MessageCircle className="h-4 w-4" />
-          <span>Comprar por WhatsApp</span>
+          <span>Consultar precio</span>
         </a>
       </div>
     </div>

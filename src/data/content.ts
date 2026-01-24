@@ -1,30 +1,6 @@
 import { Testimonial, FAQ } from '@/types';
 
-export const testimonials: Testimonial[] = [
-  {
-    id: '1',
-    name: 'María González',
-    location: 'San José',
-    rating: 5,
-    comment: 'Excelente calidad y servicio. Los testers son originales y llegaron súper rápido.',
-    product: 'Chanel No. 5 (Tester)'
-  },
-  {
-    id: '2',
-    name: 'Carlos Ramírez',
-    location: 'Cartago',
-    rating: 5,
-    comment: 'Muy recomendado. Precios justos y atención por WhatsApp muy profesional.',
-    product: 'Dior Sauvage'
-  },
-  {
-    id: '3',
-    name: 'Ana Vargas',
-    location: 'Heredia',
-    rating: 5,
-    comment: 'Me encanta la variedad de testers. Perfectos para probar fragancias nuevas sin gastar tanto.',
-  }
-];
+export const testimonials: Testimonial[] = [];
 
 export const faqs: FAQ[] = [
   {
@@ -42,7 +18,7 @@ export const faqs: FAQ[] = [
   {
     id: '3',
     question: '¿Hacen envíos a toda Costa Rica?',
-    answer: 'Sí, realizamos envíos a todo el país. Los envíos en San José suelen llegar el mismo día o al día siguiente. Para otras provincias, el tiempo de entrega es de 2-3 días.',
+    answer: 'Sí, realizamos envíos a todo el país. Buscamos eficiencia en la entrega para que recibas tu pedido lo más pronto posible. El tiempo de entrega varía según la ubicación.',
     category: 'envios'
   },
   {
@@ -69,10 +45,10 @@ export const brandInfo = {
   name: 'Nix Perfumes 27',
   tagline: 'Tu esencia, tu estilo',
   description: 'Fragancias originales con el lujo que mereces, a precios accesibles.',
-  whatsapp: '50612345678', // Cambia por tu número real
-  email: 'info@nixperfumes27.com',
+  whatsapp: '50672140221',
+  email: 'nixonjaen00@gmail.com',
   social: {
-    instagram: '@nixperfumes27',
+    instagram: 'nix27_perfumes',
     facebook: 'NixPerfumes27',
     tiktok: '@nixperfumes27'
   },
@@ -84,8 +60,8 @@ export const brandInfo = {
     },
     {
       icon: 'truck',
-      title: 'Envíos en Costa Rica',
-      description: 'Entrega rápida y segura a todo el país'
+      title: 'Entregas Eficientes',
+      description: 'Buscamos eficiencia en la entrega'
     },
     {
       icon: 'message-circle',
