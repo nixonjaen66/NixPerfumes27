@@ -1,24 +1,49 @@
 'use client';
 
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { brandInfo } from '@/data/content';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const navigation = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Catálogo', href: '#catalogo' },
     { name: 'Testers', href: '#testers' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
+  const catalogOptions = [
+    { name: 'Testers', href: '/testers' },
+    { name: 'Perfumería Masculina', href: '/masculina' },
+    { name: 'Perfumería Femenina', href: '/femenina' },
+  ];
+
   const scrollToSection = (href: string) => {
     setIsMenuOpen(false);
+    setIsDropdownOpen(false);
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       element?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Navigate to different page
+      window.location.href = href;
     }
   };
 
@@ -34,7 +59,7 @@ const Header = () => {
               className="h-12 w-auto"
             />
             <h1 className="text-2xl md:text-3xl font-serif font-bold text-navy-800">
-              Nix Perfumes <span className="text-gold-500">27</span>
+              Nix Perfumes <span className="text-gold-600">27</span>
             </h1>
           </div>
 
@@ -49,6 +74,33 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
+            
+            {/* Dropdown for Catalog */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center space-x-1 text-navy-700 hover:text-gold-500 font-medium transition-colors duration-200"
+              >
+                <span>Catálogo</span>
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
+                  isDropdownOpen ? 'rotate-180' : ''
+                }`} />
+              </button>
+              
+              {isDropdownOpen && (
+                <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50">
+                  {catalogOptions.map((option) => (
+                    <button
+                      key={option.name}
+                      onClick={() => scrollToSection(option.href)}
+                      className="w-full text-left px-4 py-2 text-navy-700 hover:bg-gold-50 hover:text-gold-600 transition-colors duration-200"
+                    >
+                      {option.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}

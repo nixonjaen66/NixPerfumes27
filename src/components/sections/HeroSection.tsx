@@ -6,7 +6,7 @@ import { brandInfo } from '@/data/content';
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-25 to-white overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-25 to-white overflow-hidden pt-20">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23f3f4f6' fillOpacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -38,15 +38,15 @@ const HeroSection = () => {
             {/* Benefits */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-gold-400 rounded-full"></div>
+                <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
                 <span>100% Originales</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-gold-400 rounded-full"></div>
+                <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
                 <span>Envíos a toda Costa Rica</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-gold-400 rounded-full"></div>
+                <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
                 <span>Atención personalizada</span>
               </div>
             </div>

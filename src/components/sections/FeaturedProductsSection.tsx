@@ -11,11 +11,11 @@ const FeaturedProductsSection = () => {
         {/* Section Header */}
         <div className="text-center space-y-6 mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-800">
-            Productos Destacados
+            LOS MÁS COTIZADOS
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Descubre nuestras fragancias más populares. Cada perfume es 100% original 
-            y viene con garantía de autenticidad.
+            Los perfumes más solicitados por nuestros clientes. Fragancias que han conquistado 
+            Costa Rica por su calidad y precio excepcional.
           </p>
         </div>
 

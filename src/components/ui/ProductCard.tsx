@@ -14,9 +14,9 @@ const ProductCard = ({ product, className = '' }: ProductCardProps) => {
   const discountPercentage = hasDiscount ? calculateDiscount(product.originalPrice!, product.price) : 0;
 
   return (
-    <div className={`card-product group ${className}`}>
+    <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group ${className}`}>
       {/* Image Container */}
-      <div className="relative aspect-square bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+      <div className="relative aspect-square bg-white p-8">
         {/* Discount Badge */}
         {hasDiscount && (
           <div className="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">
@@ -30,11 +30,18 @@ const ProductCard = ({ product, className = '' }: ProductCardProps) => {
         </div>
 
         {/* Product Image */}
-        <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+        <div className="w-full h-full flex items-center justify-center">
           <img 
             src={product.image} 
             alt={product.name}
-            className="w-full h-full object-contain p-4"
+            className="w-full h-full object-contain"
+            onError={(e) => {
+              // Si la imagen .jpg falla, intenta cargar la versión .svg
+              const currentSrc = e.currentTarget.src;
+              if (currentSrc.includes('.jpg')) {
+                e.currentTarget.src = currentSrc.replace('.jpg', '.svg');
+              }
+            }}
           />
         </div>
       </div>

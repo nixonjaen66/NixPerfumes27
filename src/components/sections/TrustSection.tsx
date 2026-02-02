@@ -77,10 +77,10 @@ const TrustSection = () => {
               </div>
 
               <div className="space-y-4">
-                <div className="text-3xl md:text-4xl font-bold text-navy-600">24h</div>
+                <div className="text-3xl md:text-4xl font-bold text-navy-600">🚚</div>
                 <div className="text-gray-700">
-                  <div className="font-semibold">Envío Rápido</div>
-                  <div className="text-sm text-gray-500">En San José</div>
+                  <div className="font-semibold">Envío Seguro</div>
+                  <div className="text-sm text-gray-500">A toda Costa Rica</div>
                 </div>
               </div>
 

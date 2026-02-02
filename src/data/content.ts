@@ -18,7 +18,7 @@ export const faqs: FAQ[] = [
   {
     id: '3',
     question: '¿Hacen envíos a toda Costa Rica?',
-    answer: 'Sí, realizamos envíos a todo el país. Buscamos eficiencia en la entrega para que recibas tu pedido lo más pronto posible. El tiempo de entrega varía según la ubicación.',
+    answer: 'Sí, realizamos envíos a todo el país. Los tiempos de entrega varían según la ubicación: en San José generalmente 1-2 días hábiles, otras provincias 2-4 días hábiles.',
     category: 'envios'
   },
   {
@@ -60,8 +60,8 @@ export const brandInfo = {
     },
     {
       icon: 'truck',
-      title: 'Entregas Eficientes',
-      description: 'Buscamos eficiencia en la entrega'
+      title: 'Entregas Confiables',
+      description: 'Envíos seguros a toda Costa Rica'
     },
     {
       icon: 'message-circle',

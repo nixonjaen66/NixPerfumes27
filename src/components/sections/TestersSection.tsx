@@ -9,20 +9,20 @@ const TestersSection = () => {
   const benefits = [
     {
       icon: Sparkles,
-      title: 'Misma Fragancia Original',
-      description: 'Exactamente el mismo perfume que la versión completa. Sin diferencias en calidad o duración.',
+      title: 'Fragancia Idéntica',
+      description: 'Los testers contienen exactamente el mismo perfume que la versión original. Cero diferencias en calidad.',
       color: 'text-gold-500'
     },
     {
       icon: DollarSign,
-      title: 'Precio Más Accesible',
-      description: 'Ahorra hasta un 30% comparado con la presentación completa. Lujo al alcance de todos.',
+      title: 'Ahorro del 25-30%',
+      description: 'Misma esencia, menor precio. Solo cambia la presentación, no la calidad del contenido.',
       color: 'text-green-500'
     },
     {
       icon: CheckCircle,
-      title: 'Perfectos para Probar',
-      description: 'Ideal para conocer nuevas fragancias antes de comprar la presentación completa.',
+      title: 'Diferencias de Presentación',
+      description: 'Sin caja decorativa y tapa más simple. El perfume por dentro es 100% idéntico al original.',
       color: 'text-navy-500'
     }
   ];
@@ -33,11 +33,11 @@ const TestersSection = () => {
         {/* Section Header */}
         <div className="text-center space-y-6 mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-800">
-            ¿Qué son los Testers?
+            Testers vs Originales
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Los testers son exactamente las mismas fragancias que los perfumes completos, 
-            pero a un precio más accesible. Descubre el lujo sin comprometer tu presupuesto.
+            ¿Cuál es la diferencia? Te explicamos todo para que tomes la mejor decisión. 
+            Misma calidad, diferentes presentaciones.
           </p>
         </div>
 
