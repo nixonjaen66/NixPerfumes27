@@ -147,26 +147,6 @@ const TestersSection = () => {
             <ProductCard key={product.id} product={product} className="animate-fade-in" />
           ))}
         </div>
-
-        {/* CTA Section */}
-        <div className="text-center space-y-6 bg-navy-800 text-white rounded-3xl p-8 md:p-12">
-          <h3 className="text-2xl md:text-3xl font-serif font-bold">
-            ¿Necesitas ayuda para elegir?
-          </h3>
-          <p className="text-navy-100 max-w-2xl mx-auto text-lg">
-            Nuestro equipo te ayuda a encontrar la fragancia perfecta según tus gustos, 
-            ocasión y presupuesto. ¡Consulta sin compromiso!
-          </p>
-          <a
-            href={generateConsultationWhatsAppLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-3 bg-green-500 hover:bg-green-600 text-white font-medium px-8 py-4 rounded-lg transition-colors duration-200 text-lg"
-          >
-            <MessageCircle className="h-5 w-5" />
-            <span>Recibir Asesoría Gratis</span>
-          </a>
-        </div>
       </div>
     </section>
   );

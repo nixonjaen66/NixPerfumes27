@@ -28,12 +28,6 @@ export const faqs: FAQ[] = [
     category: 'pagos'
   },
   {
-    id: '5',
-    question: '¿Puedo cambiar o devolver un producto?',
-    answer: 'Aceptamos devoluciones únicamente si el producto llega dañado o defectuoso. Los perfumes no pueden devolverse por razones de higiene una vez abiertos.',
-    category: 'general'
-  },
-  {
     id: '6',
     question: '¿Cómo sé si un perfume me va a gustar?',
     answer: 'Por eso ofrecemos testers a precios más accesibles. También puedes consultarnos por WhatsApp sobre las notas de cada fragancia para encontrar la perfecta para ti.',

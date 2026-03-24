@@ -9,8 +9,10 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Catálogo', href: '#catalogo' },
-    { name: 'Testers', href: '#testers' },
+    { name: 'Orientación', href: '#orientacion' },
+    { name: 'Conocimiento', href: '#conocimiento' },
+    { name: 'Catálogos', href: '#catalogo-masculino' },
+    { name: 'Testers', href: '#catalogo-testers' },
     { name: 'Contacto', href: '#contacto' }
   ];
 

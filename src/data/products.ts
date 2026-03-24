@@ -148,6 +148,152 @@ export const products: Product[] = [
       heart: ['Jazmín', 'Gaiac'],
       base: ['Ámbar gris', 'Musgo de roble']
     }
+  },
+
+  // Más perfumes femeninos
+  {
+    id: 'coco-mademoiselle-100ml',
+    name: 'Coco Mademoiselle',
+    brand: 'Chanel',
+    price: 89000,
+    image: '/images/coco-mademoiselle.svg',
+    description: 'Elegancia moderna y sofisticada. Un clásico atemporal.',
+    category: 'perfume',
+    size: '100ml',
+    inStock: true,
+    gender: 'mujer',
+    notes: {
+      top: ['Bergamota', 'Naranja', 'Pomelo'],
+      heart: ['Rosa', 'Jazmín', 'Litchi'],
+      base: ['Pachuli', 'Vetiver', 'Vainilla']
+    }
+  },
+  {
+    id: 'lancome-la-vie-est-belle-75ml',
+    name: 'La Vie Est Belle',
+    brand: 'Lancôme',
+    price: 72000,
+    image: '/images/lancome-la-vie-est-belle.svg',
+    description: 'La vida es bella. Dulzura y elegancia en cada gota.',
+    category: 'perfume',
+    size: '75ml',
+    inStock: true,
+    gender: 'mujer',
+    notes: {
+      top: ['Pera', 'Grosella negra', 'Mandarina'],
+      heart: ['Iris', 'Jazmín', 'Flor de naranjo'],
+      base: ['Praline', 'Vainilla', 'Pachuli']
+    }
+  },
+  {
+    id: 'viktor-rolf-flowerbomb-50ml',
+    name: 'Flowerbomb',
+    brand: 'Viktor & Rolf',
+    price: 78000,
+    image: '/images/viktor-rolf-flowerbomb.svg',
+    description: 'Explosión floral. Sensualidad y feminidad en estado puro.',
+    category: 'perfume',
+    size: '50ml',
+    inStock: true,
+    gender: 'mujer',
+    notes: {
+      top: ['Té', 'Bergamota', 'Osmanthus'],
+      heart: ['Orquídea', 'Rosa', 'Fresia'],
+      base: ['Pachuli', 'Almizcle', 'Vainilla']
+    }
+  },
+
+  // Más perfumes masculinos
+  {
+    id: 'bleu-de-chanel-100ml',
+    name: 'Bleu de Chanel',
+    brand: 'Chanel',
+    price: 85000,
+    image: '/images/bleu-de-chanel.svg',
+    description: 'Libertad masculina. Frescura aromática y elegancia.',
+    category: 'perfume',
+    size: '100ml',
+    inStock: true,
+    gender: 'hombre',
+    notes: {
+      top: ['Limón', 'Bergamota', 'Menta'],
+      heart: ['Jengibre', 'Nuez moscada', 'Jazmín'],
+      base: ['Incienso', 'Cedro', 'Sándalo']
+    }
+  },
+  {
+    id: 'giorgio-armani-acqua-di-gio-100ml',
+    name: 'Acqua Di Gio',
+    brand: 'Giorgio Armani',
+    price: 68000,
+    image: '/images/acqua-di-gio.svg',
+    description: 'Inspirado en el Mediterráneo. Frescura acuática inconfundible.',
+    category: 'perfume',
+    size: '100ml',
+    inStock: true,
+    featured: true,
+    gender: 'hombre',
+    notes: {
+      top: ['Lima', 'Limón', 'Bergamota', 'Jazmín'],
+      heart: ['Calone', 'Fresia', 'Jacinto', 'Rosa'],
+      base: ['Almizcle blanco', 'Cedro', 'Musgo de roble']
+    }
+  },
+
+  // Más testers
+  {
+    id: 'coco-mademoiselle-tester',
+    name: 'Coco Mademoiselle (Tester)',
+    brand: 'Chanel',
+    price: 64000,
+    originalPrice: 89000,
+    image: '/images/coco-mademoiselle-tester.svg',
+    description: 'Elegancia Chanel a precio accesible. Sin caja original.',
+    category: 'tester',
+    size: '100ml',
+    inStock: true,
+    gender: 'mujer',
+    notes: {
+      top: ['Bergamota', 'Naranja', 'Pomelo'],
+      heart: ['Rosa', 'Jazmín', 'Litchi'],
+      base: ['Pachuli', 'Vetiver', 'Vainilla']
+    }
+  },
+  {
+    id: 'bleu-chanel-tester',
+    name: 'Bleu de Chanel (Tester)',
+    brand: 'Chanel',
+    price: 62000,
+    originalPrice: 85000,
+    image: '/images/bleu-chanel-tester.svg',
+    description: 'El favorito masculino de Chanel en formato tester.',
+    category: 'tester',
+    size: '100ml',
+    inStock: true,
+    gender: 'hombre',
+    notes: {
+      top: ['Limón', 'Bergamota', 'Menta'],
+      heart: ['Jengibre', 'Nuez moscada', 'Jazmín'],
+      base: ['Incienso', 'Cedro', 'Sándalo']
+    }
+  },
+  {
+    id: 'acqua-di-gio-tester',
+    name: 'Acqua Di Gio (Tester)',
+    brand: 'Giorgio Armani',
+    price: 48000,
+    originalPrice: 68000,
+    image: '/images/acqua-di-gio-tester.svg',
+    description: 'Frescura mediterránea en formato tester.',
+    category: 'tester',
+    size: '100ml',
+    inStock: true,
+    gender: 'hombre',
+    notes: {
+      top: ['Lima', 'Limón', 'Bergamota', 'Jazmín'],
+      heart: ['Calone', 'Fresia', 'Jacinto', 'Rosa'],
+      base: ['Almizcle blanco', 'Cedro', 'Musgo de roble']
+    }
   }
 ];
 

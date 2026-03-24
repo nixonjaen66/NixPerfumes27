@@ -64,7 +64,7 @@ const TrustSection = () => {
         <div className="mt-16 bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-lg">
           <div className="text-center space-y-8">
             <h3 className="text-2xl md:text-3xl font-serif font-bold text-navy-800">
-              Garantía de Confianza
+              Garantía de Calidad
             </h3>
 
             <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -88,7 +88,7 @@ const TrustSection = () => {
                 <div className="text-3xl md:text-4xl font-bold text-green-500">5⭐</div>
                 <div className="text-gray-700">
                   <div className="font-semibold">Atención Premium</div>
-                  <div className="text-sm text-gray-500">Por WhatsApp</div>
+                  <div className="text-sm text-gray-500">Asesoría personalizada</div>
                 </div>
               </div>
             </div>
@@ -103,11 +103,7 @@ const TrustSection = () => {
                 </span>
                 <span className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-gold-400 rounded-full"></div>
-                  <span>Códigos de verificación</span>
-                </span>
-                <span className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-gold-400 rounded-full"></div>
-                  <span>Garantía de devolución</span>
+                  <span>Productos inspeccionados</span>
                 </span>
               </div>
             </div>

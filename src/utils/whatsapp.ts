@@ -6,7 +6,7 @@ export const generateWhatsAppLink = (product?: Product, customMessage?: string):
   
   let message = customMessage || `¡Hola! Me interesa conocer más sobre Nix Perfumes 27.`;
   
-  if (product) {
+  if (product && !customMessage) {
     message = `¡Hola! Me interesa el perfume *${product.name}* de ${product.brand} (${product.size}) por ₡${product.price.toLocaleString('es-CR')}.
 
 ¿Está disponible? ¿Podrían darme más información?`;

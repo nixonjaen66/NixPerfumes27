@@ -1,29 +1,20 @@
 'use client';
 
-import { MessageCircle, Star, Tag } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Product } from '@/types';
-import { generateWhatsAppLink, formatPrice, calculateDiscount } from '@/utils/whatsapp';
+import { generateWhatsAppLink, formatPrice } from '@/utils/whatsapp';
 
 interface ProductCardProps {
   product: Product;
   className?: string;
+  onWhatsAppClick?: () => void;
 }
 
-const ProductCard = ({ product, className = '' }: ProductCardProps) => {
-  const hasDiscount = product.originalPrice && product.originalPrice > product.price;
-  const discountPercentage = hasDiscount ? calculateDiscount(product.originalPrice!, product.price) : 0;
-
+const ProductCard = ({ product, className = '', onWhatsAppClick }: ProductCardProps) => {
   return (
     <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group ${className}`}>
       {/* Image Container */}
       <div className="relative aspect-square bg-white p-8">
-        {/* Discount Badge */}
-        {hasDiscount && (
-          <div className="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">
-            -{discountPercentage}%
-          </div>
-        )}
-        
         {/* Category Badge */}
         <div className="absolute top-3 right-3 bg-white/90 text-gray-700 text-xs font-medium px-2 py-1 rounded-full border z-10">
           {product.category === 'tester' ? 'Tester' : 'Completo'}
@@ -64,40 +55,28 @@ const ProductCard = ({ product, className = '' }: ProductCardProps) => {
           <div className="flex items-center justify-between">
             <div>
               <span className="text-2xl font-bold text-navy-800">{formatPrice(product.price)}</span>
-              {hasDiscount && (
-                <span className="text-lg text-gray-400 line-through ml-2">
-                  {formatPrice(product.originalPrice!)}
-                </span>
-              )}
-            </div>
-            <div className="flex items-center space-x-1 text-gold-500">
-              <Star className="h-4 w-4 fill-current" />
-              <Star className="h-4 w-4 fill-current" />
-              <Star className="h-4 w-4 fill-current" />
-              <Star className="h-4 w-4 fill-current" />
-              <Star className="h-4 w-4 fill-current" />
             </div>
           </div>
         </div>
 
-        {/* Stock Status */}
-        <div className="flex items-center space-x-2">
-          <div className={`w-2 h-2 rounded-full ${product.inStock ? 'bg-green-400' : 'bg-red-400'}`}></div>
-          <span className={`text-sm font-medium ${product.inStock ? 'text-green-600' : 'text-red-600'}`}>
-            {product.inStock ? 'Disponible' : 'Agotado'}
-          </span>
-        </div>
-
         {/* Action Button */}
-        <a
-          href={generateWhatsAppLink(product)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full flex items-center justify-center space-x-2 bg-navy-600 hover:bg-navy-700 disabled:bg-gray-400 text-white font-medium py-3 rounded-lg transition-colors duration-200 group"
-        >
-          <MessageCircle className="h-4 w-4" />
-          <span>Consultar precio</span>
-        </a>
+        {onWhatsAppClick ? (
+          <button
+            onClick={onWhatsAppClick}
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 text-sm"
+          >
+            Comprar
+          </button>
+        ) : (
+          <a
+            href={generateWhatsAppLink(product)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full inline-block text-center bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 text-sm"
+          >
+            Comprar
+          </a>
+        )}
       </div>
     </div>
   );

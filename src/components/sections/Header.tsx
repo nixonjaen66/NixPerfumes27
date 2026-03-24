@@ -25,14 +25,15 @@ const Header = () => {
 
   const navigation = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Testers', href: '#testers' },
+    { name: 'Orientación', href: '#orientacion' },
+    { name: 'Aprende', href: '#conocimiento' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
   const catalogOptions = [
-    { name: 'Testers', href: '/testers' },
-    { name: 'Perfumería Masculina', href: '/masculina' },
-    { name: 'Perfumería Femenina', href: '/femenina' },
+    { name: 'Catálogo Masculino', href: '#catalogo-masculino' },
+    { name: 'Catálogo Femenino', href: '#catalogo-femenino' },
+    { name: 'Testers', href: '#catalogo-testers' },
   ];
 
   const scrollToSection = (href: string) => {
