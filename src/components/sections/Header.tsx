@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { brandInfo } from '@/data/content';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -20,6 +20,32 @@ const Header = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 10) {
+        setIsHeaderVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+        setIsHeaderVisible(false);
+      } else {
+        setIsHeaderVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -39,30 +65,39 @@ const Header = () => {
   const scrollToSection = (href: string) => {
     setIsMenuOpen(false);
     setIsDropdownOpen(false);
+
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       element?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Navigate to different page
       window.location.href = href;
     }
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-transform duration-300 ${
+        isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <nav className="container-custom section-padding py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <img 
-              src="/images/logo.png" 
-              alt="Nix27 Perfumes" 
-              className="h-12 w-auto"
+          <button
+            type="button"
+            onClick={() => scrollToSection('#inicio')}
+            className="flex items-center space-x-3"
+            aria-label="Volver al inicio"
+          >
+            <img
+              src="/logoperfumes.jpeg"
+              alt="Nix Perfumes"
+              className="h-20 w-auto"
             />
             <h1 className="text-2xl md:text-3xl font-serif font-bold text-navy-800">
               Nix Perfumes <span className="text-gold-600">27</span>
             </h1>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -75,24 +110,27 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
-            
-            {/* Dropdown for Catalog */}
+
             <div className="relative" ref={dropdownRef}>
               <button
+                type="button"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="flex items-center space-x-1 text-navy-700 hover:text-gold-500 font-medium transition-colors duration-200"
               >
                 <span>Catálogo</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
-                  isDropdownOpen ? 'rotate-180' : ''
-                }`} />
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                />
               </button>
-              
+
               {isDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50">
                   {catalogOptions.map((option) => (
                     <button
                       key={option.name}
+                      type="button"
                       onClick={() => scrollToSection(option.href)}
                       className="w-full text-left px-4 py-2 text-navy-700 hover:bg-gold-50 hover:text-gold-600 transition-colors duration-200"
                     >
@@ -106,17 +144,13 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center">
-            {/* Mobile menu button */}
             <button
               type="button"
               className="md:hidden text-navy-700 hover:text-gold-500 transition-colors duration-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Abrir menú"
             >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -128,6 +162,7 @@ const Header = () => {
               {navigation.map((item) => (
                 <button
                   key={item.name}
+                  type="button"
                   onClick={() => scrollToSection(item.href)}
                   className="text-navy-700 hover:text-gold-500 font-medium text-left py-2 transition-colors duration-200"
                 >
